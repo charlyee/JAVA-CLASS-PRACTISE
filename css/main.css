@@ -9,3 +9,8 @@
 .indigo-text {
     color: indigo;
 }
+
+.big-text{
+    color: indigo;
+    font-size: 2.5rem;
+}

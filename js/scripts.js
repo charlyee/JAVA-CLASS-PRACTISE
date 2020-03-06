@@ -108,4 +108,48 @@ myHeading.addEventListener( 'mouseover'/* Here we say which event we are targeti
     this.className = 'salmon-text'; /* In an event, the "this" keyword represents our element (myHeading). */
 } );
 
+// When you stop hovering...
+myHeading.addEventListener( 'mouseleave', function ( event ) {
+    this.className = 'indigo-text'; 
+} );
 
+// When you stop hovering...
+myHeading.addEventListener( 'click', function ( event ) {
+    // The class we want to add.
+    var bigClass = 'big-text'; // Check if it already has it!
+    if ( !this.className.includes( bigClass ) ) // Good to do checks like this so we don't have 500 of the same class on here if the user keeps clicking!
+    { // Exclamation means NOT. So it fires on the OPPOSITE.
+        this.className += ' big-text'; // Concatenating a new class!
+        // Remember, you must have a space between classes when assigning multiple.
+    }
+} );
+
+/**
+ * Let's make a function.
+ */
+
+ // Function keyword, followed by the function name (and parameters if any are needed.)
+ function addTwoNumbers ( x, y )
+ {
+    x = Number( x ); // Enforce data-type (number.)
+    y = Number( y ); // Enforce data-type (number.)
+    return ( x + y ); // Add the two together.
+ }
+
+// Return current date as a string (2020.03.06)
+function currentDayString ()
+{
+    // New date object.
+    var date = new Date(); // @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+    // Declare a string we can store date info in.
+    var dateString = '';
+    dateString += date.getFullYear(); // Full four digit year.
+    dateString += '.'; // (Period for formatting.)
+    dateString += ( date.getMonth() + 1 ); // Month of the year.
+    dateString += '.'; // (Period for formatting.)
+    dateString += ( date.getDay() + 1 ); // Day of the week.
+    return dateString;
+}
+
+// Output to console.
+console.log( 'The current date is: \r\n' + currentDayString() ); // \r\n is return/newline - this will now output on TWO lines in your console.
